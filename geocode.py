@@ -6,7 +6,7 @@
 
 import geocoder, csv
 
-with open('hotel_RON.csv', 'rb') as input, open('ronCSVlatlon.csv', 'wb') as output:
+with open('sample.csv', 'rb') as input, open('sampleLatLon.csv', 'wb') as output:
     reader = csv.reader(input, delimiter=',')
     row0 = reader.next()
     print row0
