@@ -1,4 +1,22 @@
+# Ver. 2.7.11
+# Mod. Geocoder, CSV
+# Author: pq1
+# Description: Takes a CSV file that has addresses and writes a new CSV file that has Longitude and Latitude coordinates
+# Note: Uses ArcGIS as Geocoder
+# ArcGIS seems to have no rate limit for Geocoding
+
+#----------- Steps
 # Read CSV file
+# Read and skip over the header
+# add lat and lon column to header
+# write the new header to new file
+# create a variable input for the geocoder because it only accepts 1 argument; we want the Address, City, St to be in 1 line
+
+
+#----- CSV pre-processing
+# 1- Cut and Insert Cut cells of Address, City, Zip, St to the first 4 columns
+# 2- In excel, select the Address column and replace all the commas(,) with a blank space
+# 3- Select Facility Name and replace commas(,) with blank space# Read CSV file
 # Read and skip over the header
 # add lat and lon column to header
 # write the new header to new file
@@ -28,4 +46,5 @@ with open('sample.csv', 'rb') as input, open('sampleLatLon.csv', 'wb') as output
         row_line = row + [str(newLon)] + [str(newLat)]
         print row_line
         output.writelines(','.join(row_line) + '\n')
+        #time.sleep(2) #Time delay in sec
 
