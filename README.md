@@ -3,3 +3,5 @@ Using the GeoCoder Plug-in for Python to add a latitude and longitude column a C
 The original CSV does not have the column and the new CSV file is added to it.
 Trying simplify the code. Open to suggestions!
 Need to look at which service is being used to Geocode. Currently uses the ArcGIS service. Google service tends to be more accruate.
+
+Updated with checking the confidence in the JSON that is returned. If the confidence number is less than 80, then it passes. The master branch does not have any of the Python Dictionary library code.
