@@ -15,7 +15,7 @@
 
 import geocoder, csv, time
 
-with open('physician.csv', 'rb') as input, open('physicianGeo.csv', 'wb') as output: #, open('sampleGeo2', 'wb') as output2):
+with open('sample.csv', 'rb') as input, open('sampleGeo.csv', 'wb') as output: #, open('sampleGeo2', 'wb') as output2):
     reader = csv.reader(input, delimiter=',')
     row0 = reader.next() # Skips header Row
     print 'Current Header' + str(row0)
