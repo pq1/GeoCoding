@@ -21,7 +21,7 @@ with open('sample.csv', 'rb') as input, open('sampleLatLon.csv', 'wb') as output
         print row
         address = ', '.join(row[1:4]) # geocoder accepts only 1 arg, combines row[1] + row[2] + row[3]
         print address
-        g = geocoder.arcgis(address)
+        g = geocoder.arcgis(address) #change arcgis to google to switch services
         newLat = g.lat
         newLon = g.lng
         print newLat + newLon
