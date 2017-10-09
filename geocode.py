@@ -49,5 +49,5 @@ with open(address_file, 'rb') as input, open(output_file, 'wb') as output:
         feature = geojson.Feature(geometry=point, properties=address_dict)
         feature_collection['features'].append(feature)
 
-    json.dump(feature_collection, output, indent=4, sort_keys=True)
+    json.dump(feature_collection, output, indent=4, sort_keys=False)
     output.write('\n')
