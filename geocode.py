@@ -33,8 +33,10 @@ with open(address_file, 'rb') as input, open(output_file, 'wb') as output:
             address_lat =  geocoder.arcgis(address).lat
             address_lng = geocoder.arcgis(address).lng
             point = geojson.Point([address_lng, address_lat])
+            score = geocoder.arcgis(address).score
+            address_dict['Score'] = score
 
-        # Only get the fields we want
+        # Only get the fields we want from MLS
         address_dict['Address'] = row['Address']
         address_dict['City'] = row['City']
         address_dict['State'] = DEFAULT_STATE
@@ -43,7 +45,7 @@ with open(address_file, 'rb') as input, open(output_file, 'wb') as output:
         address_dict['Beds Total'] = row['Beds Total']
         address_dict['Baths Total'] = row['Baths Total']
         address_dict['GAR/CP/TCP'] = row['GAR/CP/TCP']
-        address_dict['Current Price'] = row['Current Price']
+        address_dict['Current Price'] = row['Current Price'].strip()
         address_dict['Change Type'] = row['Change Type']
 
         feature = geojson.Feature(geometry=point, properties=address_dict)
