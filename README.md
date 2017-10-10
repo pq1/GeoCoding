@@ -5,3 +5,7 @@ Trying to simplify the code. Open to suggestions!
 Need to look at which service is being used to Geocode. Currently uses the ArcGIS service. Google service tends to be more accruate.
 
 Source:https://pypi.python.org/pypi/geocoder
+
+# GeoJSON
+The GeoJSON format is used to output addresses.
+Here is a summary of the hierarchy of the data types: ![](https://github.com/pq1/GeoCoding/blob/master/geojson_summary.png)
