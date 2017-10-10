@@ -1,3 +1,10 @@
+# Using the Geocode Script
+`python geocode.py --input <input csv file here>`
+
+There is an optional, but recommended command: `-g or --geocode <on|off>` The default is setting is off for testing/performance sake; it's slower when it needs to hit the Geocoder service.
+
+For more information, use the help flag: `-h or --help`
+
 # GeoCoding
 Using the GeoCoder Plug-in for Python to add a latitude and longitude column a CSV file.
 The original CSV does not have the column and the new CSV file is added to it.
