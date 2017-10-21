@@ -1,18 +1,4 @@
-name,address,city,st,zip
-Fairmont Hotel,2410 M Street NW,Washington,DC,20037
-Four Seasons Hotel,2800 Pennsylvania Ave NW,Washington,DC,20007
-Hay Adams Hotel, 800 16th Street NW,Washington,DC,20006
-Jefferson Hotel, 1200 16th Street NW, Washington,DC,20036
-Mandarin Oriental,1330 Maryland Ave SE, Washington,DC,20024
-Marriott Marquis,901 Massachusetts Ave NW,Washington,DC,20001
-Mayflower Hotel,1127 Connecticut Ave NW,Washington,DC,20036
-Melrose Hotel,2430 Pennsylvania Ave NW,Washington,DC,20037
-Omnl Shoreham,2500 Calvert Street NW,Washington,DC,20008
-Park Hyatt,1201 24th Street NW,Washington,DC,20037
-Ritz Carlton Georgetown,3100 South Street NW,Washington,DC,20007
-Ritz Carlton Pentagon City,1250 South Hayes Street,Arlington,VA,22202
-Sofitel,806 15th Street NW,Washington,DC,20005
-St. Regis,923 16th Street NW,Washington,DC,20006
-Willard,1401 Pennsylvania Ave NW,Washington,DC,20004
-Ambassador's Res (Brazil),3000 Massachusetts Ave NW,Washington,DC,20008
-Ambassador's Residence (Italy),2800 Albemarle  Street NW,Washington,DC,20008
+,MLS #,Area,Address,City,Type,SqFt Total,Lot Size Area,Beds Total,Baths Total,GAR/CP/TCP,List Office,Current Price,DOM,Change Type
+1,13702866,9-Jan,111 Melody Circle,Cedar Hill,S,1573,0.158,3,2,2/0/2,DBRW01MA,"$155,000 ",1,NEW
+1,13699257,13-Jan,513 King Street,Cedar Hill,S,1787,0.13,3,2,2/0/2,ULRE01,"$169,900 ",9,NEW
+1,13698479,8-Jan,502 Springtime Drive,Cedar Hill,S,1523,0.186,3,2,2/0/2,ERIK01,"$185,000 ",9,NEW

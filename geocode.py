@@ -5,15 +5,15 @@
 import geocoder, csv
 import argparse
 import json, geojson
+import copy
 
 parser = argparse.ArgumentParser(description='-----------Geocoding Help-----------')
-parser.add_argument("-i", "--input", help='Required input CSV file name', required=True)
+parser.add_argument("-i", "--input", help='Required input CSV file name. There is a sample.csv in the current directory.', required=True)
 parser.add_argument("-g", "--geocode", help='\'on\' or \'off\' to get geocodes from ArcGIS. Default is \'off\' since it\'s faster.')
 args = parser.parse_args()
 
 address_file = args.input
 output_file = 'addresses_out.geojson'
-address_dict = {}
 
 DEFAULT_STATE = 'TX'
 
@@ -23,8 +23,10 @@ with open(address_file, 'rb') as input, open(output_file, 'wb') as output:
     # Define new GeoJSON Feature Collection that holds everything together
     # We're using GeoJSON Features because they can hold a list of properties, which is where
     # we store all of the other data
-    feature_collection = {'type':'FeatureCollection', 'features':[]}
 
+    feature_collection = geojson.FeatureCollection([])
+    address_dict = {}
+    
     for row in reader:
         point = None
         if args.geocode == 'on':
@@ -49,7 +51,10 @@ with open(address_file, 'rb') as input, open(output_file, 'wb') as output:
         address_dict['Change Type'] = row['Change Type']
 
         feature = geojson.Feature(geometry=point, properties=address_dict)
-        feature_collection['features'].append(feature)
+
+        # Need to do a deep copy of the object in order to get unique objects into the feature_list
+        # Referece: http://forums.devshed.com/python-programming-11/appending-object-list-overwrites-previous-842713.html
+        feature_collection.features.append(copy.deepcopy(feature))
 
     json.dump(feature_collection, output, indent=4, sort_keys=False)
     output.write('\n')
