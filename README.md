@@ -1,3 +1,7 @@
+# Packages needed for running
+1. Geocoder
+2. GeoJSON
+
 # Using the Geocode Script
 `python geocode.py --input <input csv file here>`
 
